@@ -1,0 +1,40 @@
+<footer class="container-fluid w-100  text-light py-2">
+       <div class="row">
+           
+            <div class="container text-center">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-skype"></i></a>
+                  </div>
+       </div>
+
+</footer>
+
+// css
+
+footer {
+    position: fixed;
+    height: 40px;
+    bottom: 0;
+    width: 100%;
+    background: #004631;
+    padding: 10px 0;
+    text-align: center;
+}
+
+  footer a {
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    
+    transition: all .5s ease;
+  }
+  footer a:first-child {
+    
+  }
+  footer a:hover {
+    color: #004631;
+    background: white;
+  }
