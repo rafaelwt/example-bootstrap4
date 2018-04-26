@@ -1,0 +1,132 @@
+
+https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap-4/42252877#
+
+
+Important! Vertical center is relative to the height of the parent
+
+If the parent of the element your trying to center has no defined height, none of the vertical centering solutions will work!
+
+Now, onto vertical centering in Bootstrap 4...
+
+You can use the new flexbox & size utilities to make the container full-height and display: flex. These options don't require extra CSS (except that the height of the container (ie:html,body) must be 100%).
+
+Option 1 align-self-center on flexbox child
+
+<div class="container d-flex h-100">
+    <div class="row justify-content-center align-self-center">
+     I'm vertically centered
+    </div>
+</div>
+https://www.codeply.com/go/fFqaDe5Oey
+
+Option 2 align-items-center on flexbox parent (.row is display:flex; flex-direction:row)
+
+<div class="container h-100">
+    <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+            <div class="jumbotron">
+                I'm vertically centered
+            </div>
+        </div>
+    </div>
+</div>
+https://www.codeply.com/go/BumdFnmLuk
+
+Option 3 justify-content-center on flexbox parent (.card is display:flex;flex-direction:column)
+
+<div class="container h-100">
+    <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+            <div class="card h-100 border-primary justify-content-center">
+                <div>
+                    ...card content...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+https://www.codeply.com/go/3gySSEe7nd
+
+More on Bootstrap 4 Vertical Centering
+
+Now that Bootstrap 4 offers flexbox and other utilities, there are many approaches to vertical alignment. http://www.codeply.com/go/WG15ZWC4lf
+
+1 - Vertical Center Using Auto Margins:
+
+Another way to vertically center is to use my-auto. This will center the element within it's container. For example, h-100 makes the row full height, and my-auto will vertically center the col-sm-12 column.
+
+<div class="row h-100">
+    <div class="col-sm-12 my-auto">
+        <div class="card card-block w-25">Card</div>
+    </div>
+</div>
+Vertical Center Using Auto Margins Demo
+
+my-auto represents margins on the vertical y-axis and is equivalent to:
+
+margin-top: auto;
+margin-bottom: auto;
+2 - Vertical Center with Flexbox:
+
+vertical center grid columns
+
+Since Bootstrap 4 .row is now display:flex you can simply use align-self-center on any column to vertically center it...
+
+       <div class="row">
+           <div class="col-6 align-self-center">
+                <div class="card card-block">
+                 Center
+                </div>
+           </div>
+           <div class="col-6">
+                <div class="card card-inverse card-danger">
+                    Taller
+                </div>
+          </div>
+    </div>
+or, use align-items-center on the entire .row to vertically center align all col-* in the row...
+
+       <div class="row align-items-center">
+           <div class="col-6">
+                <div class="card card-block">
+                 Center
+                </div>
+           </div>
+           <div class="col-6">
+                <div class="card card-inverse card-danger">
+                    Taller
+                </div>
+          </div>
+    </div>
+Vertical Center Different Height Columns Demo
+
+3 - Vertical Center Using Display Utils:
+
+Bootstrap 4 has display utils that can be used for display:table, display:table-cell, display:inline, etc.. These can be used with the vertical alignment utils to align inline, inline-block or table cell elements.
+
+<div class="row h-50">
+    <div class="col-sm-12 h-100 d-table">
+        <div class="card card-block d-table-cell align-middle">
+            I am centered vertically
+        </div>
+    </div>
+</div>
+Vertical Center Using Display Utils Demo
+
+More examples
+Vertical center image in <div>
+Vertical center .row in .container
+Vertical center and bottom in <div>
+Vertical center child inside parent
+
+Important! Did I mention height?
+Remember vertical centering is relative to the height of the parent element. If you want to center on the entire page, in most cases, this should be your CSS...
+
+body,html {
+  height: 100%;
+}
+If you want to center a child element inside the parent. The parent must have a defined height.
+
+Also see:
+Vertical alignment in bootstrap 4
+Bootstrap 4. Center Vertical and Horizontal Alignment
