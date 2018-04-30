@@ -1,0 +1,6 @@
+.fondo {
+    background: url("../img/fondo-2.jpg");
+    height: 100vh; /**/
+    background-position: center; /* imagen centrada*/
+    background-size: cover; /* tamaño sea el indicado segun el alto*/
+}
